@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 def remove_char_at(str, n):
-    index = 0
-    for letter in str:
-        if index == n:
-            continue
-        else:
-            new = new + letter
-        index += 1
+    new = ""
+    for x in range(len(str)):
+        if x != n:
+            new += str[x]
     return new
 
 print(remove_char_at("Best School", 3))
