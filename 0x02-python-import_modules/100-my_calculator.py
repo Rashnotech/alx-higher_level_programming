@@ -5,7 +5,7 @@ from calculator_1 import add, sub, mul, div
 if __name__ == '__main__':
     args = sys.argv[:4]
     arg = len(args)
-    if arg < 3:
+    if arg != 3:
         print('{} <a> <operator> <b>'.format(args[0]))
         sys.exit(1)
     a = int(args[1])
