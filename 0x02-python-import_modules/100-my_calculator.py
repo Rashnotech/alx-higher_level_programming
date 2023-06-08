@@ -8,9 +8,9 @@ if __name__ == '__main__':
     if arg != 3:
         print('{} <a> <operator> <b>'.format(sys.argv[0]))
         sys.exit(1)
-    a = int(args[1])
-    ops = args[2]
-    b = int(args[3])
+    a = int(args[0])
+    ops = args[1]
+    b = int(args[2])
     if ops == "+":
         print('{} {} {} {} {}'.format(a, "+", b, "=", add(a, b)))
     elif ops == "-":
