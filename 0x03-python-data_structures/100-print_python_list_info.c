@@ -9,17 +9,15 @@
 void print_python_list_info(PyObject *p)
 {
 	Py_ssize_t i, length = PyList_Size(p);
-	PyObject *item, *itemString;
+	PyObject *item;
 	const char *itemValue;
 
 	printf("[*] Size of the Python List = %ld\n", length);
-	printf("[*] Allocated = %d\n", length);
+	printf("[*] Allocated = %ld\n", length);
 	for (i = 0; i < length; i++)
 	{
 		item = PyList_GetItem(p, i);
-		itemString = PyObject_Str(item);
-		itemValue = PyUnicode_AsUTF8(itemString);
-		printf("Element %d: %s\n", i, itemValue);
-		Py_DECREF(itemString);
+		itemValue = Py_TYPE(item)->tp_name;
+		printf("Element %ld: %s\n", i, itemValue);
 	}
 }
