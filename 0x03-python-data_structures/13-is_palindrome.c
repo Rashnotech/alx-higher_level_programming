@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * is_palindrom - Check if a singly linked list is a palindrome
+ * is_palindrome - Check if a singly linked list is a palindrome
  * @head: a struct node pointer
  * Return: an integer 0 if it's not a palindrome otherwise 1
  */
@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 		slow = slow->next;
 	while (slow && prev)
 	{
-		if (s:low->n != prev->n)
+		if (slow->n != prev->n)
 			return (0);
 		slow = slow->next;
 		prev = prev->next;
