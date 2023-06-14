@@ -7,13 +7,6 @@ def square_matrix_simple(matrix=[]):
         new_matrix.append(lists)
     return new_matrix
 
-
-def multiply_by_2(a_dictionary):
-    dict_copy = {}
-    for key, value in a_dictionary.items():
-        dict_copy[key] = value * 2
-    return dict_copy
-
 def best_score(a_dictionary):
     best, key_best = 0, ""
     if len(a_dictionary) == 0:
