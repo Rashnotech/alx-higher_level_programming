@@ -7,16 +7,6 @@ def square_matrix_simple(matrix=[]):
         new_matrix.append(lists)
     return new_matrix
 
-def best_score(a_dictionary):
-    best, key_best = 0, ""
-    if len(a_dictionary) == 0:
-        return None
-    for key, value in a_dictionary.items():
-        if value > best:
-            best = value
-            key_best = key
-    return key_best
-
 def multiply_list_map(my_list=[], number=0):
     lists = my_list.copy()
     new_list[] = lists.map(element => element * number)
