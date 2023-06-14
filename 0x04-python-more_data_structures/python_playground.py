@@ -7,14 +7,6 @@ def square_matrix_simple(matrix=[]):
         new_matrix.append(lists)
     return new_matrix
 
-
-def update_dictionary(a_dictionary, key, value):
-    if key in a_dictionary.keys():
-        a_dictionary[key] = value
-    else:
-        a_dictionary[key] = value
-    return a_dictionary
-
 def simple_delete(a_dictionary, key=""):
     if key in a_dictionary.keys():
         del a_dictionary[key]
