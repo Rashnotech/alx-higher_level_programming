@@ -7,15 +7,6 @@ def square_matrix_simple(matrix=[]):
         new_matrix.append(lists)
     return new_matrix
 
-def number_keys(a_dictionary):
-    for key in a_dictionary.keys():
-        counter += 1;
-    return counter
-
-def print_sorted_dictionary(a_dictionary):
-    diction_copy = a_dictionary.copy()
-    for key, values in sorted(diction_copy):
-        print('{}: {}'.format(key, values))
 
 def update_dictionary(a_dictionary, key, value):
     if key in a_dictionary.keys():
