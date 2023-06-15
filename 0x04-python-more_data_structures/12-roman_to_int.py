@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     digit = []
-    if not roman_string or roman_string.isalpha():
+    if not roman_string or not roman_string.isalpha():
         return 0
     diction = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'M': 1000,
                'D': 500, 'C': 100}
