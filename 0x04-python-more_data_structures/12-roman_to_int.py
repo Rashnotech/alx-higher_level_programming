@@ -9,6 +9,8 @@ def roman_to_int(roman_string):
     for r_num in upper:
         if r_num in diction.keys():
             digit.append(diction[r_num])
+        else:
+            digit.append(0)
     num = 0
     size = len(digit)
     for i in range(size):
