@@ -9,7 +9,7 @@
 void print_python_list_info(PyObject *p)
 {
 	Py_ssize_t i, length;
-	PyListObject *list = (PyListObject *)p;
+	PyBytesObject *list = (PyBytesObject *)p;
 	char *str;
 
 	if (PyBytes_heck(p))
