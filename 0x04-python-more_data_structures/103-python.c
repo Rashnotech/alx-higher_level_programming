@@ -1,10 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <Python.h>
 /**
- * print_python_list_info - Print a basic information
- * about python List
- * @p: Python List object
+ * print_python_bytes - Print a basic info about bytes obj
+ * @p: PyBytesObject pointer
  */
 void print_python_bytes(PyObject *p)
 {
@@ -12,7 +9,7 @@ void print_python_bytes(PyObject *p)
 	PyBytesObject *list = (PyBytesObject *)p;
 	char *str;
 
-	if (PyBytes_heck(p))
+	if (PyBytes_Check(p))
 	{
 		length = PyBytes_Size(p);
 		bytes = length + 1;
