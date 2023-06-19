@@ -23,7 +23,7 @@ void print_python_bytes(PyObject *p)
 		printf(" first %ld bytes: ", bytes);
 		for (i = 0; i < bytes - 1; i++)
 			printf("%02x ", (unsigned char) list->ob_sval[i]);
-		printf("%02x\n", obj->ob_sval[i]);
+		printf("%02x\n", list->ob_sval[i]);
 	}
 	else
 		printf(" [ERROR] Invalid Bytes Object\n");
