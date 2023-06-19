@@ -28,3 +28,29 @@ void print_python_bytes(PyObject *p)
 	else
 		printf(" [ERROR] Invalid Bytes Object\n");
 }
+
+/**
+ * print_python_list - print python list info
+ * @p: python object
+ */
+void print_python_list(PyObject *p)
+{
+	PyObject *str;
+	int i, alloc, length;
+
+	PyListObject *list = (PyListObject *p)p;
+
+	alloc = list->allocated;
+	length = PyLIST_GET_SIZE(p);
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %d\n", length);
+	printf("[*] Allocated = %d\n", alloc);
+
+	for (i = 0; i < length; i++)
+	{
+		str = PyList_GET_ITEM(p, i);
+		print("Element %d: %s\n", i, str->ob_type->tp_name);
+		if (PyBytes_Check(obj))
+			print_python_bytes(obj);
+	}
+}
