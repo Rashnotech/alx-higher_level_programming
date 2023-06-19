@@ -6,7 +6,7 @@
  * about python List
  * @p: Python List object
  */
-void print_python_list_info(PyObject *p)
+void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t i, length;
 	PyBytesObject *list = (PyBytesObject *)p;
