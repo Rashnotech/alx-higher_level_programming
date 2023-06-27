@@ -32,7 +32,9 @@ class Square:
         """ a method that set position attribute """
         if len(value) != 2 or not all(isinstance(num, int) for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif int(value[0]) < 0 or int(value[1]) < 0:
+        elif int(value[0]) < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif int(value[1]) < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
