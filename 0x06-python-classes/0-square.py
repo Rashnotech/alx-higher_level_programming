@@ -1,4 +1,7 @@
 #!/usr/bin/python3
 class Square:
-    """ This is an empty Square class header declaration"""
+    """ Squares has an equal sides
+    A square class has no public attribute nor private attribute
+        
+    """
     pass
