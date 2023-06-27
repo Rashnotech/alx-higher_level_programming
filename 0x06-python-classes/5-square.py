@@ -43,10 +43,11 @@ class Square:
         """
             A method that prints the output of the computation
         """
-        if self.__size == 0:
+        if self.__result == 0:
             print()
         else:
-            for i in range(self.__size):
-                for x in range(self.__result):
-                    print('{}'.format('#', end=""))
-                print()
+            for i in range(1, self.__result + 1):
+                if i % self.__size != 0:
+                    print("#", end='')
+                else:
+                    print("#")
