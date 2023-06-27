@@ -62,8 +62,6 @@ class Square:
             for i in range(self.__size):
                 if self.__position[1] > 0 and self.__position[0] > 0:
                     count = self.__position[0]
-                elif self.__position[1] > 0 and self.__position[0] < 0:
-                    count = self.__position[1]
                 else:
                     count = self.__position[0]
                 for y in range(count):
