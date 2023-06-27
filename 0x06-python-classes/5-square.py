@@ -13,6 +13,7 @@ class Square:
             __result: a private attribute declared as a private method
     """
     __result = 0
+
     def __init__(self, size=0):
         self.__size = size
 
@@ -37,7 +38,7 @@ class Square:
         """
         self.__result = self.__size ** 2
         return self.__result
-    
+
     def my_print(self):
         """
             A method that prints the output of the computation
