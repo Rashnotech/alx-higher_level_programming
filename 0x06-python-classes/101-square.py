@@ -73,7 +73,7 @@ class Square:
                     print('#', end='')
                 print()
 
-    def __repr__(self):
+    def __str__(self):
         """ Print an object of a class like a string """
         self.my_print()
         return ""
