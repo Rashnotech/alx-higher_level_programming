@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+""" Squares: A class to find a square of an object
+"""
+
+
 class Square:
-    """ Squares has an equal sides
-    A square class has no public attribute nor private attribute
-        
-    """
+    """ A silent / empty class """
     pass
