@@ -1,10 +1,21 @@
 #!/usr/bin/python3
+"""
+    Square: A square class to find the square of an
+    integer number
+"""
+
+
 class Square:
     """ A Square with a constructor that initialize size to
         but make sure it's a value and of type integer
         a private attribute size.
+        
+        Attributes:
+            size: An integer operand to take in value from
+            a class
+
     """
-    def __init__(self, size=0):       
+    def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
