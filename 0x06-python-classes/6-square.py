@@ -60,12 +60,12 @@ class Square:
             print()
         else:
             for i in range(self.__size):
-                if self.__position[1] > 0 and self.__position[0] > 0:
-                    count = self.__position[0]
-                else:
-                    count = self.__position[0]
-                for y in range(count):
-                    print(' ', end='')
+                if self.__position[0] > 0:
+                    for y in range(self.__position[0]):
+                        if self.__position[1] > 0:
+                            print('_', end='')
+                        else:
+                            print(' ', end='')
                 for x in range(self.__size):
                     print('#', end='')
                 print()
