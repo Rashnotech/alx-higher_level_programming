@@ -1,11 +1,17 @@
 #!/usr/bin/python3
+"""
+    Square: a class to calculate the shape of a square
+"""
+
+
 class Square:
-    """ A Square with a constructor that initialize size to
-        but make sure it's a value and of type integer
-        a private attribute size.
+    """ A Square with a constructor that initialize and validate
+        size as of a type integer assign to a private attribute size.
+
+        Attributes:
+            size: an integer variable to take an integer value
     """
     def __init__(self, size=0):
-        """ A constructor """
         self.__size = size
 
     @property
