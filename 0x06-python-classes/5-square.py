@@ -5,7 +5,6 @@
 
 
 class Square:
-    __result = 0
     """ A Square with a constructor that initialize and validate
         size as of a type integer assign to a private attribute size.
 
@@ -13,6 +12,7 @@ class Square:
             __size: an integer variable to take an integer value
             __result: a private attribute declared as a private method
     """
+    __result = 0
     def __init__(self, size=0):
         self.__size = size
 
