@@ -51,8 +51,7 @@ class Square:
         """ A method that finds the area of a square using a
             private attribute.
         """
-        self.__result = self.__size ** 2
-        return self.__result
+        return self.__size ** 2
 
     def my_print(self):
         """
