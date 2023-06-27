@@ -73,5 +73,3 @@ class Square:
                 for _ in range(self.__size):
                     print('#', end='')
                 print()
-            if self.__position == (0, 0):
-                print()
