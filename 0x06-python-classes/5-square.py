@@ -12,7 +12,6 @@ class Square:
             __size: an integer variable to take an integer value
             __result: a private attribute declared as a private method
     """
-    __result = 0
 
     def __init__(self, size=0):
         self.__size = size
@@ -43,10 +42,11 @@ class Square:
         """
             A method that prints the output of the computation
         """
-        if self.__result == 0:
+        count = self.area()
+        if self.__size == 0:
             print()
         else:
-            for i in range(1, self.__result + 1):
+            for i in range(1, count + 1):
                 if i % self.__size != 0:
                     print("#", end='')
                 else:
