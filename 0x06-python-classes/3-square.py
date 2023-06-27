@@ -9,7 +9,6 @@ class Square:
     """ A Square with a constructor that initialize size to
         but make sure it's a value and of type integer
         a private attribute size.
-        
         Attributes:
             size: An integer operand to take in value from
             a class
