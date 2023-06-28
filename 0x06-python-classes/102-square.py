@@ -34,3 +34,27 @@ class Square:
             private attribute.
         """
         return self.__size ** 2
+    
+    def __lt__(self, other):
+        """ A magic method to find if value is less than """
+        return self.value < other.value
+
+    def __gt__(self, other):
+        """ A magic method to find if value is greather """
+        return self.value > other.value
+
+    def __ge__(self, other):
+        """ A magic method to find if value is greater or equalto """
+        return self.value >= other.value
+
+    def __eq__(self, other):
+        """ A magic method to find if value is equalto """
+        return self.value == other.value
+
+    def __le__(self, other):
+        """ A magic method to find if value is less than """
+        return self.value <= other.value
+
+    def __ne__(self, other):
+        """ A magic method to find if value is not equal to """
+        return self.value != other.value
