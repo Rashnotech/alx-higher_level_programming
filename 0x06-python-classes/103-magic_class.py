@@ -27,7 +27,3 @@ class MagicClass:
     def circumference(self):
         """ A method that find the circumference of a circle """
         return self._MagicClass__radius * 2 * math.pi
-
-a = MagicClass(4)
-print(a.area())
-print(a.circumference())
