@@ -14,6 +14,36 @@ class Square:
     def __init__(self, size=0):
         self.size = size
 
+    def area(self):
+        """ A method that finds the area of a square using a
+            private attribute.
+        """
+        return self.__size ** 2
+    
+    def __lt__(self, other):
+        """ A magic method to find if value is less than """
+        return self.__size < other.__size
+
+    def __gt__(self, other):
+        """ A magic method to find if value is greather """
+        return self.__size > other.__size
+
+    def __ge__(self, other):
+        """ A magic method to find if value is greater or equalto """
+        return self.__size >= other.__size
+
+    def __eq__(self, other):
+        """ A magic method to find if value is equalto """
+        return self.__size == other.__size
+
+    def __le__(self, other):
+        """ A magic method to find if value is less than """
+        return self.__size <= other.__size
+
+    def __ne__(self, other):
+        """ A magic method to find if value is not equal to """
+        return self.__size != other.__size
+
     @property
     def size(self):
         """ Get the value of an attribute size """
@@ -28,33 +58,3 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-
-    def area(self):
-        """ A method that finds the area of a square using a
-            private attribute.
-        """
-        return self.__size ** 2
-    
-    def __lt__(self, other):
-        """ A magic method to find if value is less than """
-        return self.value < other.value
-
-    def __gt__(self, other):
-        """ A magic method to find if value is greather """
-        return self.value > other.value
-
-    def __ge__(self, other):
-        """ A magic method to find if value is greater or equalto """
-        return self.value >= other.value
-
-    def __eq__(self, other):
-        """ A magic method to find if value is equalto """
-        return self.value == other.value
-
-    def __le__(self, other):
-        """ A magic method to find if value is less than """
-        return self.value <= other.value
-
-    def __ne__(self, other):
-        """ A magic method to find if value is not equal to """
-        return self.value != other.value

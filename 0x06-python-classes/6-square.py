@@ -60,7 +60,7 @@ class Square:
         """
             A method that prints the output of the computation
         """
-        if self.__size == 0:
+        if (self.__size or self.__position[0]) == 0:
             print()
         else:
             for _ in range(self.__size):

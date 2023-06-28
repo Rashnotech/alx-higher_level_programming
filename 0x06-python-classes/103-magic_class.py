@@ -22,7 +22,7 @@ class MagicClass:
 
     def area(self):
         """ A method that find the area of a circle """
-        return self._MagicClass__radius ** 2 * math.pi
+        return 2 ** self._MagicClass__radius * math.pi
 
     def circumference(self):
         """ A method that find the circumference of a circle """
