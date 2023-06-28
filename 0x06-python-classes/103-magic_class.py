@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import math
 """
     MagicClass: a magic class that can find the area and circumference
 
@@ -16,6 +15,7 @@ class MagicClass:
             _MagicClass: a protected attribute that stores the radius of
             a circle
     """
+
     def __init__(self, radius=0):
         if type(radius) is not int:
             raise TypeError('radius must be a number')
@@ -31,6 +31,3 @@ class MagicClass:
     def circumference(self):
         """ A method that find the circumference of a circle """
         return self._MagicClass__radius * 2 * math.pi
-
-circle = MagicClass("3")
-print(circle.area())
