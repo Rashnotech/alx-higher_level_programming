@@ -55,27 +55,17 @@ class Square:
         """ A method that finds the area of a square using a
             private attribute.
         """
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """
             A method that prints the output of the computation
         """
-        if self.__size == 0:
+        if self.size == 0:
             print()
-        else:
-            if Square.counter == 1:
-                print()
-            for _ in range(self.__size):
-                if self.__position[0] > 0:
-                    for i in range(self.__position[0]):
-                        if self.__position[1] > 0 and i == 0:
-                            print(' ', end='')
-                        elif self.__position[1] > 0:
-                            print('', end='')
-                        else:
-                            print(' ', end='')
-                for _ in range(self.__size):
-                    print('#', end='')
-                print()
-            Square.counter += 1
+            return
+        for _ in range(self.position[1]):
+            print()
+        for _ in range(self.size):
+            print(' ' * self.position[0], end='')
+            print('#' * self.size)
