@@ -19,7 +19,7 @@ class Square:
             private attribute.
         """
         return self.__size ** 2
-    
+
     def __lt__(self, other):
         """ A magic method to find if value is less than """
         return self.__size < other.__size
