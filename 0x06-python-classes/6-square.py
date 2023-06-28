@@ -11,9 +11,7 @@ class Square:
         Attributes:
             __size: an integer variable declared as a private attribute
             __position: a tuple declared as private attribute
-            counter: a public attribute counter
     """
-    counter = 0
 
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -69,3 +67,5 @@ class Square:
         for _ in range(self.size):
             print(' ' * self.position[0], end='')
             print('#' * self.size)
+        if self.position[0] == 0:
+            print()
