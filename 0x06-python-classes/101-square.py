@@ -67,6 +67,13 @@ class Square:
             print('#' * self.size)
 
     def __str__(self):
+        square_str = ''
+        
+        if self.size == 0:
+            return square_str
         """ Print class as a string """
-        self.my_print()
-        return ""
+        for _ in range(self.position[1]):
+            square_str += '\n'
+        for _ in range(self.size):
+            square_str += ' ' * self.position[0] + '#' * self.size + '\n'
+        return square_str.rstrip()
