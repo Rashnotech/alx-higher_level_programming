@@ -67,11 +67,10 @@ class Square:
             print('#' * self.size)
 
     def __str__(self):
+        """ print class as a string """
         square_str = ''
-        
         if self.size == 0:
             return square_str
-        """ Print class as a string """
         for _ in range(self.position[1]):
             square_str += '\n'
         for _ in range(self.size):
