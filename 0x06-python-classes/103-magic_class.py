@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+from math import pi
+
 """
     MagicClass: a magic class that can find the area and circumference
 
