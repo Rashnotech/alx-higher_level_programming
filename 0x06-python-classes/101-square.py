@@ -11,7 +11,6 @@ class Square:
         Attributes:
             __size: an integer variable declared as a private attribute
             __position: a tuple declared as private attribute
-            __count: keep track of count
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -33,7 +32,9 @@ class Square:
         """ a method that set position attribute """
         if len(value) != 2 or not all(isinstance(num, int) for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif int(value[0]) < 0 or int(value[1]) < 0:
+        elif not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif int(value[0]) < 0 and int(value[1]) < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -52,28 +53,22 @@ class Square:
         """ A method that finds the area of a square using a
             private attribute.
         """
-        self.__result = self.__size ** 2
-        return self.__result
+        return self.size ** 2
 
     def my_print(self):
         """
             A method that prints the output of the computation
         """
-        if self.__size == 0:
+        if self.size == 0:
             print()
-        else:
-            for _ in range(self.__size):
-                if self.__position[0] > 0:
-                    for _ in range(self.__position[0]):
-                        if self.__position[1] > 0:
-                            print('_', end='')
-                        else:
-                            print(' ', end='')
-                for _ in range(self.__size):
-                    print('#', end='')
-                print()
+            return
+        for _ in range(self.position[1]):
+            print()
+        for _ in range(self.size):
+            print(' ' * self.position[0], end='')
+            print('#' * self.size)
 
     def __str__(self):
-        """ Print an object of a class like a string """
+        """ Print class as a string """
         self.my_print()
         return ""
