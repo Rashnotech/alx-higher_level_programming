@@ -40,7 +40,7 @@ class Rectangle:
         """ A method that sets an attribute """
         if type(value) is not int:
             raise TypeError('height must be an integer')
-        elif height < 0:
+        elif value < 0:
             raise ValueError('height must be >= 0')
         else:
             self.__height = value
@@ -51,12 +51,16 @@ class Rectangle:
 
     def perimeter(self):
         """ A method that find the perimeter of a rectangle """
-        return 2 * self.width + self.height
+        if self.width == 0 or self.height == 0:
+            param = 0
+        else:
+            param =  2 * (self.width + self.height)
+        return param
 
     def __str__(self):
         """ A print Rectangle class like a text """
         printout = ""
-        if (self.height or self.width) == 0:
+        if self.height == 0 or self.width == 0:
             printout = ""
         else:
             for _ in self.height:
