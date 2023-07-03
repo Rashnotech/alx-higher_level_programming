@@ -65,7 +65,7 @@ class Rectangle:
             for _ in range(self.height):
                 printout += '#' * self.width + '\n'
         return printout.rstrip()
-    
+
     def __repr__(self):
         """ create a new instance """
         return f'Rectangle({self.width}, {self.height})'
