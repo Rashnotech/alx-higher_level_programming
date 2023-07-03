@@ -38,9 +38,9 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """ A method that sets an attribute """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('height must be an integer')
-        elif height < 0:
+        elif value < 0:
             raise ValueError('height must be >= 0')
         else:
             self.__height = value
@@ -51,19 +51,21 @@ class Rectangle:
 
     def perimeter(self):
         """ A method that find the perimeter of a rectangle """
-        return 2 * self.width + self.height
+        if self.height == 0 or self.width == 0:
+            param = 0
+        else:
+            param = 2 * (self.width + self.height)
 
     def __str__(self):
         """ A print Rectangle class like a text """
-        printout = ""
+        printout = ''
         if (self.height or self.width) == 0:
-            printout = ""
+            printout = ''
         else:
-            for _ in self.height:
-                printout += "#" * self.width
-                printout += "\n"
-        return printout
+            for _ in range(self.height):
+                printout += '#' * self.width + '\n'
+        return printout.rstrip()
     
-    def __eval__(self):
+    def __repr__(self):
         """ create a new instance """
-        return Rectangle()
+        return f'Rectangle({self.width}, {self.height})'
