@@ -54,7 +54,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             param = 0
         else:
-            param =  2 * (self.width + self.height)
+            param = 2 * (self.width + self.height)
         return param
 
     def __str__(self):
@@ -66,4 +66,3 @@ class Rectangle:
             for _ in range(self.height):
                 printout += '#' * self.width + '\n'
         return printout.rstrip()
-
