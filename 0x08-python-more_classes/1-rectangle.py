@@ -10,7 +10,12 @@
 
 
 class Rectangle:
-    """ Class Module below """
+    """ Class Method
+        Args:
+            width.setter: to set attribute
+            height.setter: to set attribute
+        Few Raises in module
+    """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -40,7 +45,7 @@ class Rectangle:
         """ A method that sets an attribute """
         if type(value) is not int:
             raise TypeError('height must be an integer')
-        elif height < 0:
+        elif value < 0:
             raise ValueError('height must be >= 0')
         else:
             self.__height = value
