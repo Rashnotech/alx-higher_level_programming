@@ -82,6 +82,8 @@ class Rectangle:
             raise TypeError('size must be an integer')
         elif size < 0:
             raise ValueError('size must be >= 0')
+        elif not isinstance(cls, Rectangle):
+            raise TypeError('cls must be an instance of Rectangle')
         else:
             return cls(size, size)
 
