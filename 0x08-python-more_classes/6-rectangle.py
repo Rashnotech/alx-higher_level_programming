@@ -15,7 +15,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        Rectangle().number_of_instance += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -68,12 +68,13 @@ class Rectangle:
             for _ in range(self.height):
                 printout += "#" * self.width + '\n'
         return printout.rstrip()
+     
+    def __del__(self):
+        """ a method that indicate an instance was deleted """
+        Rectangle.number_of_instances -= 1
+        print('Bye rectangle...')
     
     def __repr__(self):
         """ create a new instance """
         return f'Rectangle({self.width}, {self.height})'
 
-    def __del__(self):
-        """ a method that indicate an instance was deleted """
-        Rectangle().number_of_instances -= 1
-        print('Bye rectangle...')
