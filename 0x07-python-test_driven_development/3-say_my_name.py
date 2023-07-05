@@ -8,7 +8,7 @@
     >>> say_my_name("Walter", "White")
     My name is Walter White
     >>> say_my_name("Bob")
-    My name is Bob 
+    My name is Bob
     >>> try:
     ...     say_my_name(12, "White")
     ... except Exception as e:
