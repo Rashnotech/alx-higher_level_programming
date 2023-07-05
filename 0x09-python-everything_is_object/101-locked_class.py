@@ -4,7 +4,9 @@
 
 class LockedClass:
     """ Locked Class with no attribute """
+
     def __setattr__(self, name, value):
+        """ sett attribute method """
         if not hasattr(self, name) and name != 'first_name':
             raise AttributeError(f'LockedClass object has no attribute {name}')
         super().__setattr__(name, value)
