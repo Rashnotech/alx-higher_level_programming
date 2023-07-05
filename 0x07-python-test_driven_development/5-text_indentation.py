@@ -9,6 +9,7 @@
 
 
 def text_indentation(text):
+    """ A function that indent a text """
     delim = [':', '.', '?']
     if not isinstance(text, str):
         raise TypeError('text must be a string')

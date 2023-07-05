@@ -35,3 +35,13 @@ Sin aliud quid voles, postea.
 Quae animi affectio suum cuique tribuens atque hanc, quam dico.
 <BLANKLINE>
 Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+>>> try:
+...     text_indentation()
+... except Exception as e:
+...     print(e)
+text_indentation() missing 1 required positional argument: 'text'
+>>> try:
+...     text_indentation(5)
+... except Exception as e:
+...     print(e)
+text must be a string
