@@ -78,12 +78,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ creating a new Rectangle instance width width and height, size"""
-        if not isinstance(size, int):
-            raise TypeError('size must be an integer')
-        elif size < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            return cls(size, size)
+        return cls(size, size)
 
     def __del__(self):
         """ a method that indicate an instance was deleted """
