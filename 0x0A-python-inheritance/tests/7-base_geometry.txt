@@ -47,3 +47,38 @@ area() is not implemented
 ... except Exception as e:
 ...     print(e)
 width must be an integer
+>>> try:
+...     bg.integer_validator(None, None)
+... except Exception as e:
+...     print(e)
+None must be an integer
+>>> try:
+...     bg.integer_validator("float", "43")
+... except Exception as e:
+...     print(e)
+float must be an integer
+>>> try:
+...     bg.integer_validator("num", 5j)
+... except Exception as e:
+...     print(e)
+num must be an integer
+>>> try:
+...     bg.integer_validator("tupled", (65, 43))
+... except Exception as e:
+...     print(e)
+tupled must be an integer
+>>> try:
+...    bg.integer_validator(None, 0.3832384248459291)
+... except Exception as e:
+...    print(e)
+None must be an integer
+>>> try:
+...    bg.integer_validator(None, (45, 12))
+... except Exception as e:
+...    print(e)
+None must be an integer
+>>> try:
+...    bg.integer_validator(None, int("Light"))
+... except Exception as e:
+...    print(e)
+invalid literal for int() with base 10: 'Light'
