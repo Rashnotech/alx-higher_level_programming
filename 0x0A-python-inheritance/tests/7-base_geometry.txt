@@ -37,3 +37,9 @@ zero must be an integer
 ... except Exception as e:
 ...     print(e)
 area() is not implemented
+>>> try:
+...    bg.integer_validator(int, -2)
+... except Exception as e:
+...    print(e)
+<class 'int'> must be greater than 0
+
