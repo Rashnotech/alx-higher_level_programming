@@ -38,8 +38,12 @@ zero must be an integer
 ...     print(e)
 area() is not implemented
 >>> try:
-...    bg.integer_validator(int, -2)
+...     bg.integer_validator(int, -2)
 ... except Exception as e:
 ...    print(e)
 <class 'int'> must be greater than 0
-
+>>> try:
+...     bg.integer_validator("width", True)
+... except Exception as e:
+...     print(e)
+width must be an integer
