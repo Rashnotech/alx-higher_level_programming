@@ -3,6 +3,9 @@
 """ a module that retrieve dictionary representation """
 
 
+import json
+
+
 class Student:
     """
         A function that retrieves a dictionary representation
@@ -16,5 +19,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        return self.__dict__
+    def to_json(self, attrs=None):
+        if attrs is not None or isinstance(attrs, list):
+            data = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    data[attr] = getattr(self, attr)
+            return json.dumps(data)
+        else:
+            return self.__dict__
