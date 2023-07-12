@@ -3,9 +3,6 @@
 """ a module that retrieve dictionary representation """
 
 
-import json
-
-
 class Student:
     """
         A function that retrieves a dictionary representation
@@ -25,6 +22,6 @@ class Student:
             for attr in attrs:
                 if hasattr(self, attr):
                     data[attr] = getattr(self, attr)
-            return json.dumps(data)
+            return str(data)
         else:
             return self.__dict__
