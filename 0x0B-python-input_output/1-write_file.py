@@ -4,14 +4,13 @@
 
 
 def write_file(filename="", text=""):
-    """ a function that  writes a string to a text file 
+    """ a function that  writes a string to a text file
         Returns:
             number of character written
     """
-    count = 0;
+    count = 0
     with open(filename, 'w', encoding="utf-8") as file:
         for line in text:
             file.write(line)
-            count += 1;
-        print(file.read())
+            count += 1
     return count
