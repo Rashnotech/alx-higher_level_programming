@@ -3,9 +3,6 @@
 """ a module that returns the dictionary description """
 
 
-import json
-
-
 def class_to_json(obj):
     """
         a function that converts a simple data structure to simple
