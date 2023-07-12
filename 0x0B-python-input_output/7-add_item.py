@@ -14,6 +14,7 @@ args = sys.argv
 filename = 'add_item.json'
 items = []
 
+
 def file_exist(filename, content):
     """
         A function that checks if a filename already exist before
@@ -25,6 +26,7 @@ def file_exist(filename, content):
     load = load_from_json_file(filename)
     load.extend(content)
     save_to_json_file(load, filename)
+
 
 if len(args) == 1:
     if os.path.isfile(filename):
