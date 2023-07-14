@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
 """ a module that inserts a line of text to a file """
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ a function that inserts a line of text to a file 
+    """ a function that inserts a line of text to a file
         Args:
             filename: the name of the file
             search_string: the search string
