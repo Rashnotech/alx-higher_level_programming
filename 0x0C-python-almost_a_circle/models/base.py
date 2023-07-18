@@ -25,9 +25,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ a method that returns JSON string representation """
-        if not isinstance(list_dictionaries, list):
-            return
-        elif len(list_dictionaries) == 0:
+        if list_dictionaries == [] or list_dictionaries is None:
             return []
         else:
             return json.dumps(list_dictionaries)
