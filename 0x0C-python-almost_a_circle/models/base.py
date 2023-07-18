@@ -57,14 +57,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ a method that returns an instance with all attributes set """
-        if len(dictionary) == 0:
-            return
-        if cls.__name__ == 'Rectangle':
-            instance = cls(dictionary['width'], dictionary['height'])
-        else:
-            instance = cls(dictionary.get('width'), dictionary['x'],
-                           dictionary['y'], dictionary['id'])
-        instance.update(**dictionary)
+        if dictionary and dictionary != {}:
+            if cls.__name__ == 'Rectangle':
+                instance = cls(1, 2)
+            else:
+                instance = cls(1)
+            instance.update(**dictionary)
         return instance
 
     @classmethod
