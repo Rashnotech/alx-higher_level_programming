@@ -7,7 +7,16 @@ from .rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ a class """
+    """ a square clas with attributes
+        Attr:
+            size: size of the angle
+            x: x coordinate
+            y: y coordinate
+        Raise:
+            TypeError inherited from rectangle class
+            ValueError inherited from rectangle class
+    """
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
