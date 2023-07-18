@@ -68,7 +68,8 @@ class Base:
         if cls.__name__ == 'Rectangle':
             instance = cls(dictionary['width'], dictionary['height'])
         else:
-            instance = cls(dictionary.get('width'), dictionary['x'], dictionary['y'], dictionary['id'])
+            instance = cls(dictionary.get('width'), dictionary['x'],
+                           dictionary['y'], dictionary['id'])
         instance.update(**dictionary)
         return instance
 
@@ -104,7 +105,6 @@ class Base:
                     content = cls.to_json_string(instance)
         with open(class_name, 'w') as file:
             file.write(content)
- 
 
     @classmethod
     def load_from_file_csv(cls):
