@@ -33,8 +33,8 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ a method that update all the attribute in the class """
-        attrs = ['id', 'size', 'x', 'u']
-        if len(args) > 0:
+        attrs = ['id', 'size', 'x', 'y']
+        if len(args) != 0:
             for attr, value in zip(attrs, args):
                 setattr(self, attr, value)
         else:
