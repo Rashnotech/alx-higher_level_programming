@@ -20,7 +20,7 @@ class TestRectangle(unittest.TestCase):
         rect_class = Rectangle(10, 2)
         rect_class_1 = Rectangle(10, 2, 0, 0, 12)
         # Perform the assertions
-        #self.assertEqual(rect_mock.id, rect_class.id)
+        self.assertNotEqual(rect_mock.id, rect_class.id)
         self.assertEqual(rect_mock_1.id, rect_class_1.id)
         self.assertEqual(rect_mock_1.width, rect_class_1.width)
         self.assertEqual(rect_mock.height, rect_class.height)
@@ -57,7 +57,11 @@ class TestRectangle(unittest.TestCase):
         rect_mock = MagicMock(width=4 , height=2)
         rect_mock.area.return_value = rect_mock.width * rect_mock.height
         rect_class = Rectangle(4, 2)
+        r1_class = Rectangle(8, 7, 0, 0, 12)
+        r1_mock = MagicMock(width=8, height=7, x=0, y=0, id=12)
+        r1_mock.area.return_value = r1_mock.width * r1_mock.height
         self.assertEqual(rect_mock.area(), rect_class.area())
+        self.assertEqual(r1_mock.area(), r1_class.area())
 
     def test_display(self):
         """ test display area"""
@@ -65,19 +69,37 @@ class TestRectangle(unittest.TestCase):
         rect_class = Rectangle(2, 2)
         rect_class = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(rect_class), '[Rectangle] (12) 2/1 - 4/6')
+        self.assertNotEqual(str(rect_class), '[Rectangle] (1) 0/0 - 2/2')
 
     def test_argument_order(self):
         """ test argument order """
         r_class = Rectangle(10, 10, 10, 10)
         r_class.update(89, 2)
+        r1_class = Rectangle(10, 10, 10, 10, 10)
+        r1_class.update(89, 2, 3, 4)
         self.assertEqual(str(r_class), '[Rectangle] (89) 10/10 - 2/10')
+        self.assertEqual(str(r1_class), '[Rectangle] (89) 4/10 - 2/3')
 
     def test_kwargs_argument(self):
         """ test kwargs argument """
         r_class = Rectangle(10, 10, 10, 10, 1)
+        r1_class = Rectangle(10, 10, 10, 10, 10)
         r_class.update(height=1)
+        r1_class.update(y=1, width=2, x=3, id=89)
         self.assertEqual(str(r_class), '[Rectangle] (1) 10/10 - 10/1')
+        self.assertEqual(str(r1_class), '[Rectangle] (89) 3/1 - 2/10')
 
+    def test_to_dictionary(self):
+        """ test to dictionary method """
+        r1 = Rectangle(10, 2, 1, 9, 2)
+        r2 = Rectangle(1, 1)
+        dictionary = r1.to_dictionary()
+        r2.update(**dictionary)
+        self.assertEqual(dictionary, {'x': 1, 'y': 9, 'id': 2, 'height': 2, 'width': 10})
+        self.assertEqual(str(r1), '[Rectangle] (2) 1/9 - 10/2')
+        #self.assertEqual(type(dictionary), <class 'dict'>)
+        self.assertEqual(str(r2), '[Rectangle] (2) 1/9 - 10/2')
+        self.assertFalse(r1 == r2)
 
 if __name__ == '__main__':
     unittest.main()
