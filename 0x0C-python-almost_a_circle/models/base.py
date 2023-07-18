@@ -5,6 +5,7 @@
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -112,3 +113,37 @@ class Base:
             return content
         else:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ a method that draws all Rectangle and Squares """
+        tk = turtle.Turtle()
+        tk.screen.bgcolor("#b7312c")
+        tk.shape("turtle")
+        tk.pensize(2)
+
+        tk.color('#ff0000')
+        for r in list_rectangles:
+            tk.showturtle()
+            tk.up()
+            tk.goto(r.x, r.y)
+            tk.down()
+            for _ in range(2):
+                tk.fd(r.width)
+                tk.left(90)
+                tk.fd(r.height)
+                tk.lef(90)
+            tk.hideturtle()
+        tk.color('#b5e3d7')
+        for s in list_squares:
+            tk.showturtle()
+            tk.up()
+            tk.goto(s.x, s.y)
+            tk.down()
+            for _ in range(2):
+                tk.fd(s.width)
+                tk.left(90)
+                tk.fd(s.height)
+                tk.left(90)
+            tk.hideturtle()
+        tk.exitonclick()

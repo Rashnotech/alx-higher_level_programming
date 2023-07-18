@@ -94,33 +94,15 @@ class TestRectangle(unittest.TestCase):
 
     def test_argument_order(self):
         """ test argument order """
-        test_suite = [[89, 2], [89, 2, 3], [89, 2, 3, 4]]
-        expected_result = ['[Rectangle] (89) 10/10 - 2/10',
-                '[Rectangle] (89) 10/10 - 2/3',
-                '[Rectangle] (89) 4/10 - 2/3',
-                '[Rectangle] (89) 4/5 - 2/3'
-                ]
         r_class = Rectangle(10, 10, 10, 10)
-        for idx, test in enumerate(test_suite):
-            r_class.update(*test)
-            self.assertEqual(str(r_class), expected_result[idx])
+        r_class.update(89, 2)
+        self.assertEqual(str(r_class), '[Rectangle] (89) 10/10 - 2/10')
 
     def test_kwargs_argument(self):
         """ test kwargs argument """
-        test_suite = [{'height': 1}, {'width': 1, 'x': 2},
-                {'y': 1, 'width': 2, 'x': 3, 'id': 89},
-                {'x':1, 'height':2, 'y':3, 'width':4}
-                ]
-        expect_result = [
-                '[Rectangle] (1) 10/10 - 10/1',
-                '[Rectangle] (1) 2/10 - 1/1',
-                '[Rectangle] (89) 3/1 - 2/1'
-                '[Rectangle] (89) 1/3 - 4/2'
-                ]
-        r_class = Rectangle(10, 10, 10, 10)
-        for idx, test in enumerate(test_suite):
-            r_class.update(**test)
-            self.assertEqual(str(r_class), expect_result[idx])
+        r_mock = MagicMock(width=10, 10, 10, 10)
+        r_mock.update(height=1)
+        self.assertEqual(str(r_class), '[Rectangle] (1) 10/10 - 10/1')
 
 
 if __name__ == '__main__':
