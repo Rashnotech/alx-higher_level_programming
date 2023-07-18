@@ -1,9 +1,9 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 """ a module that handles all about square """
 
 
-from models.rectangle import Rectangle
+from .rectangle import Rectangle
 
 
 class Square(Rectangle):
