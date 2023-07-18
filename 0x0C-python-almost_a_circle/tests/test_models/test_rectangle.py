@@ -24,7 +24,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect_mock_1.id, rect_class_1.id)
         self.assertEqual(rect_mock_1.width, rect_class_1.width)
         self.assertEqual(rect_mock.height, rect_class.height)
-
+    
     def test_raises(self):
         """ test rectangle if it's raises exceptions """
         test_value_error = [-2, -4, -5, -1, -13]
@@ -100,6 +100,34 @@ class TestRectangle(unittest.TestCase):
         #self.assertEqual(type(dictionary), <class 'dict'>)
         self.assertEqual(str(r2), '[Rectangle] (2) 1/9 - 10/2')
         self.assertFalse(r1 == r2)
+
+
+    def test_raises_message(self):
+        """ test rectangle if it's raises exceptions """
+        test_value_error = [-2, -4, -5, -1, -13]
+        test_type_error = [[2, 4], {'k': 3, 'y': 5}, 2.3, 5j, 'Hello', (3, 4)]
+        r1_class = Rectangle(10, 2, 3, 3)
+        # Test valueError
+        for test in test_value_error:
+            with self.assertRaisesRegex(ValueError, 'width must be > 0'):
+                r1_class.width = test
+            with self.assertRaisesRegex(ValueError, 'height must be > 0'):
+                r1_class.height = test
+            with self.assertRaisesRegex(ValueError, 'x must be >= 0'):
+                r1_class.x = test
+            with self.assertRaisesRegex(ValueError, 'y must be >= 0'):
+                r1_class.y = test
+
+        # Test TypeError
+        for test in test_type_error:
+            with self.assertRaisesRegex(TypeError, 'width must be an integer'):
+                r1_class.width = test
+            with self.assertRaisesRegex(TypeError, 'height must be an integer'):
+                r1_class.height = test
+            with self.assertRaisesRegex(TypeError, 'x must be an integer'):
+                r1_class.x = test
+            with self.assertRaisesRegex(TypeError, 'y must be an integer'):
+                r1_class.y = test
 
 if __name__ == '__main__':
     unittest.main()
