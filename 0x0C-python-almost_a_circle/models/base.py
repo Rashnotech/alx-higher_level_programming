@@ -35,9 +35,8 @@ class Base:
         """ a method that write JSON string to a file """
         class_name = cls.__name__ + '.json'
         instance = []
-        content = ''
         if len(list_objs) == 0 or list_objs is None:
-            content = []
+            content = "[]"
         else:
             for ins in list_objs:
                 if not isinstance(ins, Base):
