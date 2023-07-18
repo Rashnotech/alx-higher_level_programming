@@ -28,7 +28,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """ a method that sets the value of a private attribute size """
-        self.__width = size
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """ a method that update all the attribute in the class """
