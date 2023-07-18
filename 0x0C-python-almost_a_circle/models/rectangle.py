@@ -95,12 +95,10 @@ class Rectangle(Base):
 
     def display(self):
         """ a method that illustrate the computed area of a rectangle """
-        if self.y > 0:
-            print('\n' * self.y, end='')
+        print('\n' * self.y, end='')
         for _ in range(self.height):
-            if self.x > 0:
-                print(' ' * self.x, end='')
-                print(self.width * '#')
+            print(' ' * self.x, end='')
+            print(self.width * '#')
 
     def __str__(self):
         """ a method that returns Rectangle class attributes """
