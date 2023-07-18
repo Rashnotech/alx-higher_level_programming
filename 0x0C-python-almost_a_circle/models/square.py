@@ -44,15 +44,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ a method that return dictonary representation of square """
-        class_name = self.__class__.__base__.__name__
-        attrs = self.__dict__
-        width = '_' + class_name + '__' + 'width'
-        height = '_' + class_name + '__' + 'height'
-        if hasattr(self, 'size'):
-            attrs['size'] = self.size
-        return {
-                key.replace(f"_{class_name}__", ""): value
-                for key, value in attrs.items()}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     def __str__(self):
         """ returns details of square attributes """
