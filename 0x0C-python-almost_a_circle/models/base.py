@@ -49,7 +49,7 @@ class Base:
         """  a method that returns the list of the JSON
             string representation
         """
-        if len(json_string) == 0 or json_string is None:
+        if json_string == [] or json_string is None:
             return []
         else:
             return json.loads(json_string)
