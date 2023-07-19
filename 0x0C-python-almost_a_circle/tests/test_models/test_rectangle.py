@@ -6,6 +6,8 @@
 import unittest
 from unittest.mock import MagicMock
 from models.rectangle import Rectangle
+from models.base import Base
+from models.square import Square
 
 
 class TestRectangle(unittest.TestCase):
@@ -20,6 +22,8 @@ class TestRectangle(unittest.TestCase):
         rect_class = Rectangle(10, 2)
         rect_class_1 = Rectangle(10, 2, 0, 0, 12)
         # Perform the assertions
+        self.assertIsInstance(rect_class, Base)
+        self.assertNotIsInstance(rect_class, Square)
         self.assertNotEqual(rect_mock.id, rect_class.id)
         self.assertEqual(rect_mock_1.id, rect_class_1.id)
         self.assertEqual(rect_mock_1.width, rect_class_1.width)
