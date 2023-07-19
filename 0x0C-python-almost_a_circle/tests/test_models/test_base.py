@@ -20,7 +20,12 @@ class TestBase(unittest.TestCase):
             to avoid id duplication
         """
         base_class = Base()
+        n1 = base_class.id
+        base = Base()
+        base_id = Base(2)
         self.assertIsNotNone(base_class.id)
+        self.assertEqual(base.id, n1 + 1)
+        self.assertEqual(base_id.id, 2)
 
     def test_assignment(self):
         """ a test_case that checked the assigned value to
