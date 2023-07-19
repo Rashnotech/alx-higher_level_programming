@@ -67,6 +67,22 @@ class TestBase(unittest.TestCase):
             fs.read()
         self.assertIsNotNone(f)
         self.assertIsNotNone(fs)
+    
+    def test_empty_save_to_file(self):
+        """ a testcase using empty list """
+        r1 = Rectangle(10, 7)
+        s1 = Square(5)
+        Rectangle.save_to_file([])
+        Square.save_to_file([])
+        self.assertTrue(os.path.isfile('Rectangle.json'))
+        self.assertTrue(os.path.isfile('Square.json'))
+        with open('Rectangle.json', 'r') as f:
+            f.read()
+        with open('Square.json', 'r') as fs:
+            fs.read()
+        self.assertNotEqual(f, fs)
+        self.assertIsNotNone(fs)
+        self.assertIsNotNone(f)
 
     def test_from_json_string(self):
         """ a testcase that check from json_string """
