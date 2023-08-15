@@ -1,1 +1,4 @@
-INSERT INTO first_table (id, name) VALUES(89, 'Best School')
+-- a script that inserts a new row
+-- in the table in your MySQL
+INSERT INTO first_table (id, name) VALUES(89, 'Best School');
+
