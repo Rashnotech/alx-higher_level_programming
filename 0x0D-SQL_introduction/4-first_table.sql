@@ -1,4 +1,7 @@
+-- a script that creates a table
+-- first_table in the current database
 create IF NOT EXISTS first_table(
-	id int,
-	name varchar(256)
+	id INT,
+	name VARCHAR(256)
 );
+
