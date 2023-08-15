@@ -1,1 +1,4 @@
-DESCRIBE first_table;
+-- a script that print the full description
+-- of the table first_table from the database
+SHOW PLAN FOR SELECT * FROM first_table;
+
