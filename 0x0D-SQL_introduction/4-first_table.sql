@@ -1,6 +1,6 @@
 -- a script that creates a table
 -- first_table in the current database
-create IF NOT EXISTS first_table(
+CREATE IF NOT EXISTS first_table(
 	id INT,
 	name VARCHAR(256)
 );
