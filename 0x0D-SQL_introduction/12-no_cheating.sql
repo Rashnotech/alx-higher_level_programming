@@ -1,1 +1,4 @@
-UPDATE second_table set `score`= 10 where name LIKE 'Bob';
+-- a script that updates the score
+-- of Bob to 10 in the table
+UPDATE second_table SET `score`= 10 WHERE name LIKE 'Bob';
+
