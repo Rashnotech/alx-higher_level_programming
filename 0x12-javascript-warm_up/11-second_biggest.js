@@ -7,13 +7,14 @@ let xsMax = 0;
 if (argv.length <= 3) {
   xsMax = 0;
 } else {
-  let max = argv[2];
+  let max = parseInt(argv[2], 10);
   for (let i = 0; i < argv.length; i++) {
-    if (argv[i] > max) {
+    const num = parseInt(argv[i], 10);
+    if (num > max) {
       xsMax = max;
-      max = argv[i];
-    } else if (argv[i] > xsMax && argv[i] < max) {
-      xsMax = argv[i];
+      max = num;
+    } else if (num > xsMax && num < max) {
+      xsMax = num;
     }
   }
 }
