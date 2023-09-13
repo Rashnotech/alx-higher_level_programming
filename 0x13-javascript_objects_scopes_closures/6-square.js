@@ -9,11 +9,12 @@ module.exports = class Square extends Rectangle {
     if (!c) {
       c = 'X';
     }
-    for (let i = 0; i < this.width; i++) {
+    for (let i = 0; i < this.height; i++) {
+      let row = '';
       for (let j = 0; j < this.width; j++) {
-        process.stdout.write(c);
+        row += c;
       }
-      console.log();
+      console.log(row);
     }
   }
 };
