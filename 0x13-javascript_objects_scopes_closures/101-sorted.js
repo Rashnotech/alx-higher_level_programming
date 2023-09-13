@@ -1,11 +1,11 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
-const new_dict = {};
+const newDict = {};
 for (const id in dict) {
   const samp = dict[id];
-  if (new_dict[samp] === undefined) {
-    new_dict[samp] = [];
+  if (newDict[samp] === undefined) {
+    newDict[samp] = [];
   }
-  new_dict[samp].push(id);
+  newDict[samp].push(id);
 }
-console.log(new_dict);
+console.log(newDict);
