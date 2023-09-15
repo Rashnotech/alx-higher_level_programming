@@ -13,9 +13,9 @@ if __name__ == '__main__':
     dbase = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(user, passwd, dbase), pool_pre_ping=True)
-    Session = sessionmaker(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query.(State).filter(State.name.like
-                                          ('%a%')).order_by('id').all()
+    states = session.query.filter(State.name.like
+                                  ('%a%')).order_by('id').all()
     for state in states:
         print('{}: {}'.format(state.id, state.name))
