@@ -15,9 +15,10 @@ if __name__ == '__main__':
                          user=my_user, passwd=my_pass,
                          db=my_db)
     cur = db.cursor()
-    cur.execute('SELECT name FROM cities\
-            WHERE state_id = (SELECT id FROM states\
-            WHERE name = %s) ORDER BY id ASC', (search,))
+    cur.execute('SELECT cities.name\
+                FROM cities JOIN states\
+                ON cities.state_id = states.id\
+                WHERE states.name = %s ORDER BY cities.id ASC', (search,))
     cities = cur.fetchall()
     for city, in cities:
         print(city, end=", ")
