@@ -15,6 +15,8 @@ if __name__ == '__main__':
         user, passwd, dbase), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by('id').first()
-    for state in states:
+    state = session.query(State).order_by('id').first()
+    if state is None:
+        print('Nothing')
+    else:
         print('{}: {}'.format(state.id, state.name))
