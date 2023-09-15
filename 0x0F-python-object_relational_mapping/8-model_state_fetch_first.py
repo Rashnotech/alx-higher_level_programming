@@ -11,8 +11,8 @@ if __name__ == '__main__':
     user = sys.argv[1]
     passwd = sys.argv[2]
     dbase = sys.argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        user, passwd, dbase), pool_pre_ping=True)
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+                           .format(user, passwd, dbase), pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
     state = session.query(State).order_by('id').first()
