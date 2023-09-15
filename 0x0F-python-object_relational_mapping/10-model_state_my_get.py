@@ -12,7 +12,7 @@ if __name__ == '__main__':
     dbase = sys.argv[3]
     search = sys.argv[4]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-                            user, passwd, dbase), pool_pre_tool=True)
+                            user, passwd, dbase), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).filter(State.name == search).first()
