@@ -11,7 +11,8 @@ if __name__ == '__main__':
     my_db = sys.argv[3]
     search = sys.argv[4]
 
-    db = MySQLdb.connect(host='localhost', user=my_user, passwd=my_pass,
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=my_user, passwd=my_pass,
                          db=my_db)
     cur = db.cursor()
     cur.execute('SELECT name FROM cities\
