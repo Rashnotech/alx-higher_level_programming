@@ -12,8 +12,8 @@ if __name__ == '__main__':
                          user=my_user, passwd=my_pass,
                          db=my_db)
     cur = db.cursor()
-    cur.execute('SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC\
-            ', ('N%',))
+    cur.execute('SELECT * FROM states ORDER BY id ASC')
     states = cur.fetchall()
     for state in states:
-        print(state)
+        if state[1].startswith('N'):
+            print(state)
