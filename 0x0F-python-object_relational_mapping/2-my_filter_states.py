@@ -14,7 +14,8 @@ if __name__ == '__main__':
                          user=my_user, passwd=my_pass,
                          db=my_db)
     cur = db.cursor()
-    cur.execute('SELECT * FROM states ORDER BY id ASC')
+    cur.execute('SELECT * FROM states ORDER BY id ASC'
+            .format(search))
     states = cur.fetchall()
     for state in states:
         if state[1] == search:
