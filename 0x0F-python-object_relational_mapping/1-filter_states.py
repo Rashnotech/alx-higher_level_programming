@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+""" a module that list all states with specified name """
+
+import sys
+import MySQLdb
+
+if __name__ == '__main__':
+    my_user = sys.argv[1]
+    my_pass = sys.argv[2]
+    my_db = sys.argv[3]
+    db = MySQLdb.connect(host='localhost', user=my_user, passwd=my_pass,
+                         db=my_db)
+    cur = db.cursor()
+    cur.execute('SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC\
+            ', ('N%',))
+    states = cur.fetchall()
+    for state in states:
+        print(state)
