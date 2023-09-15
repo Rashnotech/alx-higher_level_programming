@@ -15,11 +15,9 @@ if __name__ == '__main__':
                          user=my_user, passwd=my_pass,
                          db=my_db)
     cur = db.cursor()
-    cur.execute('SELECT cities.name\
-                FROM cities JOIN states\
-                ON cities.state_id = states.id\
-                WHERE states.name = %s ORDER BY cities.id ASC', (search,))
+    cur.execute('SELECT DISTINCT cities.name\
+                FROM cities, states\
+                WHERE cities.state_id IN (SELECT DISTINCT id\
+                FROM states WHERE name = %s)', (search,))
     cities = cur.fetchall()
-    for city, in cities:
-        print(city, end=", ")
-    print()
+    print(', '.join(city[0] for city in cities))
