@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ a script that creates state with city from database"""
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from relationship_city import City
 from relationship_state import Base, State
 import sys
@@ -15,9 +15,9 @@ if __name__ == '__main__':
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(user,passwd, dbase), pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    Base.metadata.create_all(engine)
+    session = Session(engine)
     state = State(name='California')
-    city = City(name='San Francisco')
-    session.add([state, city])
+    city = City(name='San Francisco', state=State(name='California'))
+    session.add(city)
     session.commit()
