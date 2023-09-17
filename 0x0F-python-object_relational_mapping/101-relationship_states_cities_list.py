@@ -13,12 +13,8 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
     count = 1
-    city_state = session.query(State,
-                               City).filter(State.id
-                                            == City.state_id).order_by(
-                                                    State.id, City.id)
-    for state, city in city_state:
-        if state.id == count:
-            print('{}: {}'.format(state.id, state.name))
-            count += 1
-        print('{}{}: {}'.format(' ' * 4, city.id, city.name))
+    city_state = session.query(State).order_by(State.id).all()
+    for state in city_state:
+        print('{}: {}'.format(state.id, state.name))
+        for city in state.cities:
+            print('{}{}: {}'.format(' ' * 4, city.id, city.name))
