@@ -4,7 +4,8 @@ import requests
 from sys import argv
 
 
-url = argv[1]
-response = requests.get(url)
-head = response.headers["X-Request-Id"]
-print(head)
+if __name__ == '__main__':
+    url = argv[1]
+    response = requests.get(url)
+    head = response.headers["X-Request-Id"]
+    print(head)
