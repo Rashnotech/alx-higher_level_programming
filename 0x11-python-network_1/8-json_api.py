@@ -5,8 +5,8 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    letter = argv[1] if len(argv) == 2 else ""
-    data = {'q': argv[1]}
+    letter = argv[1] if len(argv) > 1 else ""
+    data = {'q': letter}
     req = requests.post('http://0.0.0.0:5000/search_user', data=data)
     response = req.json()
     try:
