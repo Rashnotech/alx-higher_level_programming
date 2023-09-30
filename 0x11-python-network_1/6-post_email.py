@@ -9,4 +9,4 @@ if __name__ == '__main__':
     email = argv[2]
     data = {'email': email}
     response = requests.post(url, data=data)
-    print(response)
+    print(response.text)
