@@ -11,9 +11,8 @@ if __name__ == '__main__':
     req = requests.get(url)
     res = req.json()
     try:
-        for info in res[:10]:
-            print('{}: {}'.format(info.get('sha'), info.get('commit')
-                                                       .get('author')
-                                                       .get('name')))
+        for i in range(10):
+            print('{}: {}'.format(res[i].get('sha'), res[i].get('commit')
+                                  .get('author').get('name')))
     except Exception:
         pass
