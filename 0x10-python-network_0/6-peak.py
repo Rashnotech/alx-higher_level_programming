@@ -14,8 +14,12 @@ def find_peak(arr):
         return None
 
     size = len(arr)
-    for i in range(size):
-        if arr[i] >= arr[i - 1] and arr[i] >= arr[i + 1]:
-            return arr[i]
-    else:
-        return None
+    if size != 0:
+        for i in range(size):
+            x = i + 1
+            if x != size-1:
+                peak = arr[i] + arr[x]
+                if peak == arr[x + 1]:
+                    return arr[x + 1]
+            else:
+                return max(arr)
