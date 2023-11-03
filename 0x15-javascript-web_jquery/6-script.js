@@ -1,1 +1,3 @@
-$('DIV#update_header').click().find('header').text('New Header!!!');
+$('DIV#update_header').on('click', function() {
+  $('header').text('New Header!!!');
+});
